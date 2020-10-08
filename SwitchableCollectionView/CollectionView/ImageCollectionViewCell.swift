@@ -7,13 +7,16 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
     static var identifier: String {
         get {
-            return String(describing: type(of: self))
+            return String(describing: type(of: self)).components(separatedBy: ".")[0]
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("awakeFromNib")
+    }
+    
+    func setImage(_ image: UIImage) {
+        imageView.image = image
     }
 
 }
